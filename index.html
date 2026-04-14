@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Svet cestovania</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="asstets/css/style.css">
+</head>
+<body>
+
+  <header class="py-5 text-center">
+    <div class="container-fluid">
+      <h1 id="hlavny-nadpis">Svet cestovania</h1>
+      <p class="mt-3 mb-3">Objavuj, sníva, cestuj.</p>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg container-fluid px-4 bg-dark">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav gap-3 me-auto">
+          <li class="nav-item"><a class="nav-link" href="#destinacie">Destinácie</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ponuka">Ponuka</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tipy">Tipy na cestu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#kontakt">Kontakt</a></li>
+          <li class="nav-item"><a class="nav-link" href="#novinky">Novinky</a></li>
+          <li class="nav-item"><a class="nav-link" href="#formular">Formulár</a></li>
+        </ul>
+        <button id="dark-mode-btn" class="btn btn-outline-light btn-sm ms-3">🌙 Tmavý režim</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5">
+
+    <!-- ===== CAROUSEL ===== -->
+    <section id="carousel-sekcia" class="mb-5">
+      <h2 class="mb-3">Naše destinácie vo fotografiách</h2>
+      <div id="hlavnyCarousel" class="carousel slide rounded-4 overflow-hidden shadow-lg" data-bs-ride="carousel" data-bs-interval="2000">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#hlavnyCarousel" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#hlavnyCarousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#hlavnyCarousel" data-bs-slide-to="2"></button>
+          <button type="button" data-bs-target="#hlavnyCarousel" data-bs-slide-to="3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="carousel-placeholder bg-carousel-3 d-flex align-items-center justify-content-center position-relative overflow-hidden" style="height:400px;">
+              <img src="asstets/images/more.png" class="carousel-bg-img" alt="more">
+              <span class="carousel-img-label">🏖️ Santorini, Grécko</span>
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Santorini</h5>
+              <p>Biele domy, modrá obloha a Egejské more.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-placeholder bg-carousel-3 d-flex align-items-center justify-content-center position-relative overflow-hidden" style="height:400px;">
+              <img src="asstets/images/Island.jpg" class="carousel-bg-img" alt="Island">
+              <span class="carousel-img-label">🌋 Hverír, Island</span>
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Island</h5>
+              <p>Gejzíry, polárne žiary a divoká príroda.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-placeholder bg-carousel-3 d-flex align-items-center justify-content-center position-relative overflow-hidden" style="height:400px;">
+              <img src="asstets/images/kena.png" class="carousel-bg-img" alt="Keňa">
+              <span class="carousel-img-label">🦁 Masai Mara, Keňa</span>
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Keňa</h5>
+              <p>Safari a divoká africká príroda.</p>
+            </div>
+          </div>
+          <!-- Štvrtá položka -->
+          <div class="carousel-item">
+            <div class="carousel-placeholder bg-carousel-3 d-flex align-items-center justify-content-center position-relative overflow-hidden" style="height:400px;">
+              <img src="asstets/images/japonsko.png" class="carousel-bg-img" alt="Japonsko">
+              <span class="carousel-img-label">🌸 Tokio, Japonsko</span>
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Japonsko</h5>
+              <p>Čerešňové kvety, tradícia a modernosť.</p>
+            </div>
+          </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#hlavnyCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Predchádzajúci</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#hlavnyCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Nasledujúci</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ===== KARTY s ratio-16x9, odznak, shadow, hover, modal ===== -->
+    <section id="novinky" class="mb-5">
+      <h2 class="mb-4">Cestovné tipy — výber redakcie</h2>
+      <div class="row g-4 animovany">
+
+        <!-- Santorini -->
+        <div class="col-12 col-md-4">
+          <div class="card shadow-lg rounded-4 h-100">
+            <div class="ratio ratio-16x9 rounded-top-4 overflow-hidden position-relative">
+              <img src="asstets/images/santorini.png" class="card-bg-img" alt="Santorini">
+              <div class="ratio-content d-flex align-items-center justify-content-center">
+                <span style="font-size:3rem;">🏖️</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Santorini</h5>
+              <p class="card-text">Raj pre romantikov a milovníkov Stredozemia.</p>
+              <button class="btn btn-primary btn-pulzovanie" data-bs-toggle="modal" data-bs-target="#modalSantorini">
+                Zistiť viac
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Island -->
+        <div class="col-12 col-md-4">
+          <div class="card shadow-lg rounded-4 h-100 position-relative">
+            <span class="badge text-bg-danger position-absolute top-0 start-0 m-2" style="z-index:3;">🔥 Výpredaj</span>
+            <div class="ratio ratio-16x9 rounded-top-4 overflow-hidden position-relative">
+              <img src="asstets/images/Island.jpg" class="card-bg-img" alt="Island">
+              <div class="ratio-content d-flex align-items-center justify-content-center">
+                <span style="font-size:3rem;">🌋</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Island</h5>
+              <p class="card-text">Dobrodružstvo pre tých, čo hľadajú nevšedné zážitky.</p>
+              <button class="btn btn-primary btn-pulzovanie" data-bs-toggle="modal" data-bs-target="#modalIsland">
+                Zistiť viac
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Keňa -->
+        <div class="col-12 col-md-4">
+          <div class="card shadow-lg rounded-4 h-100">
+            <div class="ratio ratio-16x9 rounded-top-4 overflow-hidden position-relative">
+              <img src="asstets/images/kena.png" class="card-bg-img" alt="Keňa">
+              <div class="ratio-content d-flex align-items-center justify-content-center">
+                <span style="font-size:3rem;">🦁</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Keňa — Safari</h5>
+              <p class="card-text">Zažite Afriku takú, akú si predstavujete v snoch.</p>
+              <button class="btn btn-primary btn-pulzovanie" data-bs-toggle="modal" data-bs-target="#modalKenya">
+                Zistiť viac
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== MODALY ===== -->
+
+    <!-- Modal Santorini -->
+    <div class="modal fade" id="modalSantorini" tabindex="-1" aria-labelledby="modalSantoriniLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title" id="modalSantoriniLabel">🏖️ Santorini, Grécko</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Zavrieť"></button>
+          </div>
+          <div class="modal-body">
+            <p>Santorini je ostrov v Egejskom mori, známy svojou dramatickou krajinou, bielymi domčekmi a modrými kupolami kostolov. Najlepší čas návštevy je <strong>máj – jún</strong>.</p>
+            <hr>
+            <h6 class="mb-3">Rezervovať zájazd</h6>
+            <div class="mb-3">
+              <label for="modal-meno" class="form-label">Meno</label>
+              <input type="text" class="form-control" id="modal-meno" placeholder="Vaše meno">
+            </div>
+            <div class="mb-3">
+              <label for="modal-email" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="modal-email" placeholder="vas@email.com">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zavrieť</button>
+            <button type="button" class="btn btn-primary" id="btn-odoslat-modal" data-dest="Santorini">Odoslať rezerváciu</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Island -->
+    <div class="modal fade" id="modalIsland" tabindex="-1" aria-labelledby="modalIslandLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title" id="modalIslandLabel">🌋 Hverír, Island</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Zavrieť"></button>
+          </div>
+          <div class="modal-body">
+            <p>Island je krajina ohňa a ľadu. Gejzíry, sopky, polárne žiary a rozsiahle lávové polia — toto je destinácia, ktorá vás ohromí po celý rok.</p>
+            <hr>
+            <h6 class="mb-3">Rezervovať zájazd</h6>
+            <div class="mb-3">
+              <label for="modal-meno-2" class="form-label">Meno</label>
+              <input type="text" class="form-control" id="modal-meno-2" placeholder="Vaše meno">
+            </div>
+            <div class="mb-3">
+              <label for="modal-email-2" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="modal-email-2" placeholder="vas@email.com">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zavrieť</button>
+            <button type="button" class="btn btn-primary btn-odoslat-modal-gen" data-dest="Island" data-modal="modalIsland">Odoslať rezerváciu</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Keňa -->
+    <div class="modal fade" id="modalKenya" tabindex="-1" aria-labelledby="modalKenyaLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title" id="modalKenyaLabel">🦁 Masai Mara, Keňa</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Zavrieť"></button>
+          </div>
+          <div class="modal-body">
+            <p>Masai Mara je jednou z najznámejších prírodných rezervácií na svete. Veľká migrácia gnú je neprekonateľnou prírodnou podívanou.</p>
+            <hr>
+            <h6 class="mb-3">Rezervovať zájazd</h6>
+            <div class="mb-3">
+              <label for="modal-meno-3" class="form-label">Meno</label>
+              <input type="text" class="form-control" id="modal-meno-3" placeholder="Vaše meno">
+            </div>
+            <div class="mb-3">
+              <label for="modal-email-3" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="modal-email-3" placeholder="vas@email.com">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zavrieť</button>
+            <button type="button" class="btn btn-primary btn-odoslat-modal-gen" data-dest="Keňa" data-modal="modalKenya">Odoslať rezerváciu</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SEKCIA DESTINÁCIE ===== -->
+    <section id="destinacie" class="mb-5">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6 col-lg-8">
+          <h2>Obľúbené destinácie</h2>
+          <p>Svet je plný nádherných miest, ktoré čakajú na objavenie. Od zasneženích horských štítov až po teplé pláže tropických ostrovov – každý nájde to, čo hľadá.</p>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 text-center">
+          <img src="asstets/images/Island.jpg" alt="Island Hverír" width="400" height="300" class="img-fluid rounded-4 shadow">
+        </div>
+      </div>
+
+      <h3 class="mt-4">Top destinácie podľa kontinentu</h3>
+      <div class="row">
+        <div class="col-12 col-lg-8 table-responsive">
+          <table class="table table-striped table-hover">
+            <thead class="table-dark">
+              <tr>
+                <th>Destinácia</th>
+                <th>Krajina</th>
+                <th>Najlepší čas návštevy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="bg-primary bg-opacity-25">Santorini</td>
+                <td>Grécko</td>
+                <td>Máj – Jún</td>
+              </tr>
+              <tr>
+                <td class="bg-primary bg-opacity-25">Hverír</td>
+                <td>Island</td>
+                <td>celý rok, podľa preferencií</td>
+              </tr>
+              <tr>
+                <td class="bg-primary bg-opacity-25">Patagónia</td>
+                <td>Argentína / Čile</td>
+                <td>November – Február</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ACCORDION — FAQ ===== -->
+    <section id="faq" class="mb-5">
+      <h2 class="mb-4">Časté otázky</h2>
+      <div class="accordion accordion-flush rounded-4 overflow-hidden shadow" id="faqAccordion">
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              ✈️ Kedy si najlepšie rezervovať letenky?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Letenky odporúčame rezervovať <strong>2–3 mesiace vopred</strong> pre európske destinácie, a 4–6 mesiacov pre dlhé lety do Ázie alebo Ameriky. Sledujte aj flash výpredaje leteckých spoločností.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              🛂 Potrebujem vízum do Japonska?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Občania Slovenska môžu vstúpiť do Japonska <strong>bez víz</strong> na pobyt do 90 dní. Stačí platný cestovný pas. Odporúčame overiť aktuálne podmienky na stránke japonského veľvyslanectva.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              💳 Aká mena sa používa na Islande?
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Na Islande sa platí <strong>islandskou korunou (ISK)</strong>. Platobné karty sú akceptované takmer všade, hotovosť potrebujete len výnimočne. Odporúčame mať so sebou aspoň malé množstvo hotovosti na núdzové situácie.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+              🏥 Je cestovné poistenie nutnosť?
+            </button>
+          </h2>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Áno, <strong>dôrazne odporúčame</strong> uzavrieť cestovné poistenie pred každou cestou. Pokryje náklady na zdravotnú starostlivosť, zrušenie letu, stratu batožiny aj záchranné akcie. Bez neho sa môžu náklady vyšplhať na tisíce eur.
+            </div>
+          </div>
+        </div>
+
+        <!-- Nová položka accordionu -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+              🌍 Kde nájdem najlepšie tipy na ubytovanie?
+            </button>
+          </h2>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Odporúčame kombináciu portálov — <strong>Booking.com</strong> pre hotely, <strong>Airbnb</strong> pre apartmány a <strong>Hostelworld</strong> pre lacnejšie ubytovanie. Nezabudnite čítať recenzie a porovnávať ceny na viacerých platformách.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== PONUKA so živým vyhľadávaním ===== -->
+    <section id="ponuka" class="mb-5">
+      <h2>Naša ponuka</h2>
+      <p>Vyber si z našich cestovných balíčkov a zájazdov.</p>
+      <div class="mb-3">
+        <label for="vyhladavanie" class="form-label fw-semibold">Vyhľadať v ponuke:</label>
+        <input type="text" id="vyhladavanie" class="form-control" placeholder="napr. Taliansko, safari, lyžovanie…">
+        <div id="pocet-vysledkov" class="form-text mt-1"></div>
+      </div>
+      <ul class="list-group" id="zoznam-ponuky">
+        <li class="list-group-item ponuka-polozka">🏖️ Letná dovolenka na Santorini — Grécko</li>
+        <li class="list-group-item ponuka-polozka">🌋 Dobrodružný výlet na Island — Hverír a gejzíry</li>
+        <li class="list-group-item ponuka-polozka">🏔️ Trekking v Patagónii — Argentína a Čile</li>
+        <li class="list-group-item ponuka-polozka">🦁 Safari v Keni — Masai Mara</li>
+        <li class="list-group-item ponuka-polozka">🍕 Kultúrny pobyt v Taliansku — Rím a Florencia</li>
+        <li class="list-group-item ponuka-polozka">⛷️ Lyžovanie v Rakúsku — Alpy Tyrolsko</li>
+        <li class="list-group-item ponuka-polozka">🌸 Japonsko na jar — Tokio a chrámové sady</li>
+        <li class="list-group-item ponuka-polozka" id="nenaslo-sa" style="display: none;">
+          <em class="text-muted">Nič sa nenašlo. Skús iný výraz.</em>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== TIPY NA CESTU ===== -->
+    <section id="tipy" class="mb-5 bg-warning text-dark p-4 rounded-4">
+      <h2>Tipy na cestu</h2>
+      <p>Dobre naplánovaná cesta je polovica úspechu. Tu sú naše overené rady pre každého cestovatelia.</p>
+      <div class="row mt-3">
+        <div class="col-12 col-md-4 mb-4">
+          <h3>Čo si zbaliť</h3>
+          <ul class="list-group">
+            <li class="list-group-item">Cestovný pas a poistenie</li>
+            <li class="list-group-item">Univerzálny adaptér na zásuvky</li>
+            <li class="list-group-item">Lekárnička s základnými liekmi</li>
+            <li class="list-group-item">Offline mapy v mobile</li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 mb-4">
+          <h3>Postup plánovania cesty</h3>
+          <ol class="list-group list-group-numbered">
+            <li class="list-group-item">Vyber destináciu a overte vízové požiadavky</li>
+            <li class="list-group-item">Rezervuj letenky a ubytovanie vopred</li>
+            <li class="list-group-item">Naplánuj itinerár s rezervou na spontánnosť</li>
+            <li class="list-group-item">Informuj banku o zahraničnom cestovaní</li>
+          </ol>
+        </div>
+      </div>
+      <p class="mt-2">Viac inšpirácie nájdeš na portáli
+        <a href="https://www.lonelyplanet.com" target="_blank">Lonely Planet</a>.
+      </p>
+    </section>
+
+    <!-- ===== KONTAKT ===== -->
+    <section id="kontakt" class="mb-5">
+      <h2>Kontakt</h2>
+      <p>Máš otázky alebo chceš zdieľať svoj cestovateľský príbeh? Neváhaj nás kontaktovať!</p>
+      <p>Email: <a href="mailto:zuzana.bezekova@student.tuke.sk">zuzana.bezekova@student.tuke.sk</a></p>
+    </section>
+
+    <!-- ===== FORMULÁR ===== -->
+    <section id="formular" class="mb-5">
+      <h2>Napíšte nám</h2>
+      <p>Vyplňte formulár a ozveme sa vám čo najskôr.</p>
+      <form action="#" id="kontaktny-formular" class="p-4 border rounded-4 bg-light" novalidate>
+        <fieldset class="mb-4">
+          <legend class="fs-5 fw-semibold mb-3">Osobné údaje</legend>
+          <div class="mb-3">
+            <label for="meno" class="form-label">Meno <span class="text-danger">*</span></label>
+            <input type="text" id="meno" name="meno" class="form-control" placeholder="napr. Jana Nováková" required minlength="2">
+            <span class="invalid-hint">Meno musí mať aspoň 2 znaky.</span>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">E-mail <span class="text-danger">*</span></label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="napr. jana@example.com" required>
+            <span class="invalid-hint">Zadajte platný e-mail.</span>
+          </div>
+          <div class="mb-3">
+            <label for="telefon" class="form-label">Telefón</label>
+            <input type="tel" id="telefon" name="telefon" class="form-control" placeholder="napr. 0901234567" pattern="[0-9]{9,10}">
+            <span class="invalid-hint">Telefón musí mať 9–10 číslic.</span>
+          </div>
+        </fieldset>
+        <fieldset class="mb-4">
+          <legend class="fs-5 fw-semibold mb-3">Správa a záujem</legend>
+          <div class="mb-3">
+            <label for="sprava" class="form-label">Správa <span class="text-danger">*</span></label>
+            <textarea id="sprava" name="sprava" class="form-control" rows="4" placeholder="Napíšte vašu správu…" maxlength="200" required minlength="10"></textarea>
+            <div class="form-text">Zostávajúce znaky: <span id="pocitadlo-znakov">200</span></div>
+            <span class="invalid-hint">Správa musí mať aspoň 10 znakov (max 200).</span>
+          </div>
+          <div class="mb-3">
+            <p class="form-label fw-semibold mb-2">Mám záujem o rezerváciu:</p>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="rezervacia" id="rezervacia-ano" value="ano">
+              <label class="form-check-label" for="rezervacia-ano">Áno</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="rezervacia" id="rezervacia-nie" value="nie">
+              <label class="form-check-label" for="rezervacia-nie">Nie</label>
+            </div>
+          </div>
+          <div id="sekcia-rezervacie" class="mb-3 p-3 border rounded bg-white">
+            <h5 class="mb-3">Detaily rezervácie</h5>
+            <div class="mb-3">
+              <label for="datum-rezervacie" class="form-label">Dátum príchodu</label>
+              <input type="date" id="datum-rezervacie" name="datum" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="pocet-osob" class="form-label">Počet osôb</label>
+              <input type="number" id="pocet-osob" name="pocet-osob" class="form-control" min="1" max="20" placeholder="napr. 2">
+            </div>
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" id="suhlas" name="suhlas" class="form-check-input" required>
+            <label for="suhlas" class="form-check-label">Súhlasím so spracovaním osobných údajov. <span class="text-danger">*</span></label>
+            <span class="invalid-hint d-block">Súhlas je povinný.</span>
+          </div>
+        </fieldset>
+        <button type="submit" class="btn btn-primary btn-pulzovanie">Odoslať správu</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ===== TOAST ===== -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1100">
+    <div id="potvrdenieToast" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body" id="toast-sprava">
+          ✅ Správa bola úspešne odoslaná!
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Zavrieť"></button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="py-3 text-center container-fluid">
+    <p class="mb-0">&copy; 2026 Svet cestovania. Všetky práva vyhradené.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="asstets/js/script.js"></script>
+</body>
+</html>
